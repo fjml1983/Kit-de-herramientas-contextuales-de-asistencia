@@ -21,13 +21,12 @@ const BigYesNoButton = ({tipo, selected, onButtonClick}) => {
 }
 
 export default function App() {
-
   const [yesSelected, setYesSelected] = useState(true);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setYesSelected(!yesSelected);
-    }, 5000);
+    }, 3000);
   
     return () => clearInterval(intervalId);
   }, []);
