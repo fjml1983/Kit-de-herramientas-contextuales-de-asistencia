@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import "./style.css";
 
 const BigYesNoButton = ({tipo, selected, onButtonClick}) => {
@@ -22,10 +22,12 @@ const BigYesNoButton = ({tipo, selected, onButtonClick}) => {
 
 export default function App() {
 
+  const [yesSelected, setYesSelected] = useState(true);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
-      //setYesNo(!);
-    }, 1000);
+      setYesSelected(!yesSelected);
+    }, 5000);
   
     return () => clearInterval(intervalId);
   }, []);
@@ -33,8 +35,8 @@ export default function App() {
 
   return (
     <div>
-       <BigYesNoButton tipo="yes" onButtonClick={}/> 
-       <BigYesNoButton tipo="No" onButtonClick={}/> 
+       <BigYesNoButton tipo="yes" selected={yesSelected} onButtonClick={}/> 
+       <BigYesNoButton tipo="No" selected={!yesSelected} onButtonClick={}/> 
 
     </div>
   );
