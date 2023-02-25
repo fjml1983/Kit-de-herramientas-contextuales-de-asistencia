@@ -22,22 +22,30 @@ const BigYesNoButton = ({tipo, selected, onButtonClick}) => {
 
 export default function App() {
   const [yesSelected, setYesSelected] = useState(true);
-
-  const alternarBoton = () =>{
-    console.log(yesSelected)
-    setYesSelected(!yesSelected);
-    setTimeout(alternarBoton,3000);
-  }
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-     setTimeout(alternarBoton,3000);
+     const id = setInterval(() => {
+       setCount((count) => count + 1);
+     }, 1000);
+     return () => clearInterval(id);
   }, []);
   
+  useEffect(() => {
+    const id = setInterval(() => {
+      setYesSelected((preVal) => !preVal);     
+    }, 3000);
+    return () => clearInterval(id);
+ }, []);
 
   return (
     <div>
+      <div>{count}</div>
        <BigYesNoButton tipo="yes" selected={yesSelected} onButtonClick={}/> 
        <BigYesNoButton tipo="No" selected={!yesSelected} onButtonClick={}/> 
+      <br/>
+      <br/>
+      <button onClick={()=>{console.log("Seleccionado")}}>Seleccionar</button>
 
     </div>
   );
