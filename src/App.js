@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from "react";
+import P5 from 'p5'
+
 import "./style.css";
 
 const BigYesNoButton = ({tipo, selected, onButtonClick}) => {
@@ -23,6 +25,14 @@ const BigYesNoButton = ({tipo, selected, onButtonClick}) => {
 export default function App() {
   const [yesSelected, setYesSelected] = useState(true);
   const [count, setCount] = useState(0);
+
+  new P5(function (p5) {
+    p5.setup = () => {
+    }
+  
+    p5.draw = () => {  
+    }
+  })
 
   useEffect(() => {
      const id = setInterval(() => {
