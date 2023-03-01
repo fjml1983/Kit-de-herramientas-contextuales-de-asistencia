@@ -44,7 +44,7 @@ export default function YesNo() {
        <BigYesNoButton tipo="No" selected={!yesSelected} onButtonClick={}/> 
       <br/>
       <br/>
-      <button onClick={()=>{console.log("Seleccionado")}}>Seleccionar</button>
+      <button onClick={()=>{console.log("Seleccionado: " + (yesSelected ? "SI":"NO") )}}>Seleccionar</button>
 
     </div>
   );
