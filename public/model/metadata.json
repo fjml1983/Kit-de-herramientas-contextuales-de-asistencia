@@ -1,6 +1,1 @@
-{
-  "tfjsSpeechCommandsVersion": "0.4.0",
-  "modelName": "TMv2",
-  "timeStamp": "2023-03-01T01:23:47.458Z",
-  "wordLabels": ["Ruido de fondo", "SI"]
-}
+{"tfjsSpeechCommandsVersion":"0.4.0","modelName":"TMv2","timeStamp":"2023-03-04T15:31:07.267Z","wordLabels":["Ruido de fondo","SI"]}

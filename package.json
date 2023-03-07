@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "ml5": "^1.0.0",
+    "@use-it/interval": "^1.0.0",
+    "ml5": "^0.12.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-gauge-chart": "^0.4.1"
@@ -16,5 +17,17 @@
   },
   "devDependencies": {
     "react-scripts": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

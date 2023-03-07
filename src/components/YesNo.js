@@ -40,11 +40,23 @@ export default function YesNo() {
   return (
     <div>
       <div>{count}</div>
-       <BigYesNoButton tipo="yes" selected={yesSelected} onButtonClick={}/> 
-       <BigYesNoButton tipo="No" selected={!yesSelected} onButtonClick={}/> 
+       <BigYesNoButton tipo="yes" selected={yesSelected} /> 
+       <BigYesNoButton tipo="No" selected={!yesSelected} /> 
       <br/>
+      <audio id="audio-si" src="./media/si.mp3" preload="auto"/>
+      <audio id="audio-no" src="./media/no.mp3" preload="auto"/>
       <br/>
-      <button onClick={()=>{console.log("Seleccionado: " + (yesSelected ? "SI":"NO") )}}>Seleccionar</button>
+      <button onClick={()=>{
+          if(yesSelected){
+            console.log("SI");
+            document.getElementById("audio-si").play();
+          }else{
+            console.log("NO");
+            document.getElementById("audio-no").play();
+
+          }
+        }
+      }>Seleccionar</button>
 
     </div>
   );
