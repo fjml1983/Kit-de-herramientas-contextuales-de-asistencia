@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { AppContext } from '../context/AppProvider';
 
 const BigYesNoButton = ({tipo, selected, onButtonClick}) => {
   const bigButtonStyle = {
@@ -23,6 +24,20 @@ export default function YesNo() {
   const [yesSelected, setYesSelected] = useState(true);
   const [count, setCount] = useState(0);
   
+  const {shoot, trigger} = React.useContext(AppContext);
+
+  useEffect(()=>{
+    if(shoot){
+      if(yesSelected){
+        console.log("SI");
+        document.getElementById("audio-si").play();
+      }else{
+        console.log("NO");
+        document.getElementById("audio-no").play();
+      }
+    }
+  },[shoot]);
+
   useEffect(() => {
      const id = setInterval(() => {
        setCount((count) => count + 1);

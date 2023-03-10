@@ -6,8 +6,8 @@ const AppProvider = ({ children }) => {
   const [shoot, setShoot] = useState(false);
   const trigger = useCallback(
     () => {
-      setShoot(true);
-      setShoot(false);
+      setShoot(true);      
+      setTimeout(() => setShoot(false), 1000);      
     },
     []
   );
