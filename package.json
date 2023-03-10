@@ -3,11 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@use-it/interval": "^1.0.0",
     "ml5": "^0.12.2",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-gauge-chart": "^0.4.1"
+    "react-dom": "^18.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
