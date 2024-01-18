@@ -23,6 +23,11 @@ const BigYesNoButton = ({tipo, selected}) => {
 export default function YesNoAltButtons() {
   const [yesSelected, setYesSelected] = useState(true);
   const [count, setCount] = useState(0);
+  const [secondCounter, setSecondCounter] = useState(1);
+
+
+  const intervaloDeCambio = 4; //4 segundos
+
   
   const {shoot, trigger} = React.useContext(AppContext);
 
@@ -39,10 +44,20 @@ export default function YesNoAltButtons() {
     }
   },[shoot]);
 
+
   //Count every second
   useEffect(() => {
      const id = setInterval(() => {
        setCount((count) => count + 1);
+              
+       setSecondCounter((count) => { //reset counter every 4 seconds
+              if(count >= intervaloDeCambio){
+                return 1;
+              }else{
+                return count + 1;
+              }
+            });
+
      }, 1000);
      return () => clearInterval(id);
   }, []);
@@ -51,13 +66,14 @@ export default function YesNoAltButtons() {
   useEffect(() => {
     const id = setInterval(() => {
       setYesSelected((preVal) => !preVal);     
-    }, 3000);
+    }, intervaloDeCambio*1000);
     return () => clearInterval(id);
  }, []);
 
   return (
     <div>
       <p>{count}</p>
+      <p>{secondCounter}</p>
       <BigYesNoButton tipo="yes" selected={yesSelected} /> 
       <BigYesNoButton tipo="No" selected={!yesSelected} /> 
       <br/>
